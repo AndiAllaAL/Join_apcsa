@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>APCSA: The Code Upgrade</title>
+    <title>PCSS II APCSA: The Ultimate Upgrade</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Syncopate:wght@700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -49,89 +49,66 @@
             text-align: center;
         }
 
-        /* FIXED: Removed the space so it targets scenes that are currently active */
         .scene.active { display: flex; }
 
-        /* SCENE 1: MATRIX TERMINAL */
+        /* SCENE 1: PCSS II INTRO */
+        .pcss-title { font-family: 'Syncopate', sans-serif; font-size: 32px; color: #D4AF37; margin-bottom: 10px; letter-spacing: 2px; }
         .matrix-bg {
             font-family: 'JetBrains Mono', monospace;
             color: #00ff66;
-            font-size: 38px;
+            font-size: 28px;
             text-shadow: 0 0 10px rgba(0, 255, 102, 0.6);
             border-right: 3px solid #00ff66;
             white-space: nowrap;
             animation: blink 0.6s step-end infinite;
         }
 
-        /* SCENE 2: AI VORTEX */
-        .ai-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            width: 300px;
-            transition: transform 1s ease-in-out;
-        }
-        .ai-card {
-            background: #0f172a;
-            border: 1px solid #a855f7;
-            padding: 20px;
-            border-radius: 12px;
-            font-size: 32px;
-            color: #a855f7;
-            box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
-        }
-        .vortex-shrink {
-            transform: scale(0) rotate(720deg);
-            opacity: 0;
-        }
-        .ai-title {
-            font-family: 'Syncopate', sans-serif;
-            font-size: 48px;
-            color: #ffffff;
-            margin-top: 20px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.5s ease;
-        }
-        .ai-title.reveal { opacity: 1; transform: translateY(0); text-shadow: 0 0 20px #a855f7; }
+        /* SCENE 2: CROSS FIELD INFO */
+        .grid-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; width: 100%; max-width: 700px; }
+        .grid-card { background: #0f172a; border: 1px solid #334155; padding: 15px; border-radius: 8px; text-align: left; opacity: 0; transform: translateY(20px); transition: all 0.4s ease; }
+        .grid-card.show { opacity: 1; transform: translateY(0); border-color: #22d3ee; }
+        .grid-card i { color: #D4AF37; margin-right: 10px; }
+        .grid-card h4 { color: #ffffff; font-size: 18px; margin-bottom: 5px; font-family: 'Syncopate', sans-serif; }
+        .grid-card p { color: #94a3b8; font-size: 14px; }
 
         /* SCENE 3: AURA FLEX */
         .aura-title { font-family: 'Syncopate', sans-serif; font-size: 42px; margin-bottom: 10px; color: #22d3ee; }
-        .counter { font-size: 96px; font-weight: bold; color: #00ff66; text-shadow: 0 0 30px rgba(0, 255, 102, 0.4); }
+        .counter { font-size: 76px; font-weight: bold; color: #00ff66; text-shadow: 0 0 30px rgba(0, 255, 102, 0.4); }
         .aura-sub { font-size: 24px; color: #94a3b8; margin-top: 20px; transform: scale(0.8); opacity: 0; transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
         .aura-sub.pop { transform: scale(1); opacity: 1; }
 
-        /* SCENE 4: CODE BLOCKS SPEEDRUN */
-        .block-container { display: flex; flex-direction: column; gap: 15px; width: 100%; max-width: 500px; }
+        /* SCENE 4: CURRICULUM TIMELINE SPEEDRUN */
+        .curr-title { font-family: 'Syncopate', sans-serif; font-size: 24px; color: #a855f7; margin-bottom: 20px; }
+        .block-container { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; width: 100%; max-width: 750px; }
         .code-block {
             background: #0f172a;
-            border-left: 5px solid #22d3ee;
+            border-left: 4px solid #22d3ee;
             font-family: 'JetBrains Mono', monospace;
-            padding: 15px 20px;
+            padding: 10px 15px;
             text-align: left;
-            border-radius: 0 8px 8px 0;
-            font-size: 20px;
-            transform: translateX(-100%);
+            border-radius: 0 6px 6px 0;
+            font-size: 15px;
+            transform: translateX(-50%);
             opacity: 0;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.1);
         }
         .code-block.slide-in { transform: translateX(0); opacity: 1; }
         .code-block span { color: #ec4899; }
 
         /* SCENE 5: SECURE THE BREAD */
         .money-title { font-family: 'Syncopate', sans-serif; font-size: 32px; color: #94a3b8; }
-        .cash-value { font-size: 110px; font-weight: 700; color: #00ff66; text-shadow: 0 0 40px rgba(0,255,102,0.5); transform: scale(0.5); opacity: 0; transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.3); }
+        .cash-value { font-size: 100px; font-weight: 700; color: #00ff66; text-shadow: 0 0 40px rgba(0,255,102,0.5); transform: scale(0.5); opacity: 0; transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.3); }
         .cash-value.boom { transform: scale(1); opacity: 1; }
 
         /* SCENE 6: OUTRO LOCK IN */
-        .outro-box { background: #010409; border: 1px solid #30363d; font-family: 'JetBrains Mono', monospace; padding: 20px; border-radius: 8px; width: 100%; max-width: 600px; text-align: left; margin-bottom: 30px; font-size: 22px; }
+        .outro-box { background: #010409; border: 1px solid #30363d; font-family: 'JetBrains Mono', monospace; padding: 20px; border-radius: 8px; width: 100%; max-width: 650px; text-align: left; margin-bottom: 25px; font-size: 18px; }
         .lock-btn {
             font-family: 'Syncopate', sans-serif;
             background: linear-gradient(90deg, #ec4899, #a855f7);
             border: none;
-            padding: 20px 50px;
+            padding: 18px 45px;
             color: white;
-            font-size: 24px;
+            font-size: 22px;
             border-radius: 50px;
             cursor: pointer;
             box-shadow: 0 0 30px rgba(236, 72, 147, 0.4);
@@ -155,45 +132,60 @@
     <div id="animation-stage">
         
         <div class="scene active" id="scene1">
+            <div class="pcss-title">PIONEER CHARTER SCHOOL OF SCIENCE II</div>
             <div class="matrix-bg" id="terminal-text"></div>
         </div>
 
         <div class="scene" id="scene2">
-            <div class="ai-grid" id="vortex-grid">
-                <div class="ai-card"><i class="fa-solid fa-robot"></i></div>
-                <div class="ai-card"><i class="fa-brands fa-tiktok"></i></div>
-                <div class="ai-card"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-                <div class="ai-card"><i class="fa-solid fa-car-on"></i></div>
+            <h3 style="font-family:'Syncopate'; font-size:24px; margin-bottom:20px; color:#22d3ee;">CS RUNS EVERYTHING</h3>
+            <div class="grid-container">
+                <div class="grid-card" id="card1">
+                    <h4><i class="fa-solid fa-stethoscope"></i>MEDICINE</h4>
+                    <p>AI diagnostics, biological modeling, and gene sequencing require robust code pipelines.</p>
+                </div>
+                <div class="grid-card" id="card2">
+                    <h4><i class="fa-solid fa-scale-balanced"></i>LAW & ETHICS</h4>
+                    <p>Algorithmic accountability, digital privacy forensics, and high-tech intellectual property.</p>
+                </div>
+                <div class="grid-card" id="card3">
+                    <h4><i class="fa-solid fa-palette"></i>DIGITAL ART</h4>
+                    <p>Generative neural networks, rendering optimization, and immersive canvas architectures.</p>
+                </div>
+                <div class="grid-card" id="card4">
+                    <h4><i class="fa-solid fa-chart-line"></i>FINANCE</h4>
+                    <p>Quantitative high-frequency algorithms and global fintech infrastructure modeling.</p>
+                </div>
             </div>
-            <div class="ai-title" id="ai-text">AI ISN'T MAGIC.</div>
         </div>
 
         <div class="scene" id="scene3">
-            <div class="aura-title">UPGRADE YOUR STATS</div>
-            <div class="counter" id="aura-counter">+0</div>
-            <div class="aura-sub" id="aura-text">MIND THE ALGORITHM. MASTER IT.</div>
+            <div class="aura-title">PCSS II TECH ACADEMY</div>
+            <div class="counter" id="aura-counter">+0 AURA POINTS</div>
+            <div class="aura-sub" id="aura-text">DON'T JUST FEED THE ALGORITHM. BECOME THE ARCHITECT.</div>
         </div>
 
         <div class="scene" id="scene4">
+            <div class="curr-title">APCSA JAVA CURRICULUM SPEEDRUN</div>
             <div class="block-container">
-                <div class="code-block" id="block1"><span>int</span> logic = primitives;</div>
-                <div class="code-block" id="block2"><span>while</span>(struggling) { loops(); }</div>
-                <div class="code-block" id="block3"><span>Object</span> success = new Mastery();</div>
+                <div class="code-block" id="block1"><span>Unit 1-4:</span> Primitive Types & Logic Loops</div>
+                <div class="code-block" id="block2"><span>Unit 5:</span> Writing Classes & Object Architecture</div>
+                <div class="code-block" id="block3"><span>Unit 6-8:</span> Arrays, ArrayLists & 2D Arrays</div>
+                <div class="code-block" id="block4"><span>Unit 9-10:</span> Inheritance Class Trees & Recursion</div>
             </div>
         </div>
 
         <div class="scene" id="scene5">
             <div class="money-title">SECURE THE BREAD</div>
             <div class="cash-value" id="cash-text">$133,080</div>
-            <p style="color: #64748b; margin-top: 15px; font-size: 18px;">Median Software Developer Salary</p>
+            <p style="color: #64748b; margin-top: 15px; font-size: 18px;">Median Software Developer Annual Salary</p>
         </div>
 
         <div class="scene" id="scene6">
             <div class="outro-box">
-                <span style="color: #6a737d;">// The Ultimate Power Move</span><br>
-                <span style="color: #d73a49;">System</span>.<span style="color: #005cc5;">out</span>.println(<span style="color: #032f62;">"Enroll in APCSA"</span>);
+                <span style="color: #6a737d;">// Squad up at PCSS II Saugus</span><br>
+                <span style="color: #d73a49;">System</span>.<span style="color: #005cc5;">out</span>.println(<span style="color: #032f62;">"Bring a friend. Enroll in APCSA."</span>);
             </div>
-            <button class="lock-btn" id="final-btn">LOCK IN NOW</button>
+            <button class="lock-btn" id="final-btn">LOCK IN FOR NEXT SEMESTER</button>
         </div>
 
     </div>
@@ -205,11 +197,11 @@
 <script>
     const timeline = [
         { time: 0, action: runScene1 },
-        { time: 2500, action: runScene2 },
-        { time: 5500, action: runScene3 },
-        { time: 8500, action: runScene4 },
-        { time: 12000, action: runScene5 },
-        { time: 15000, action: runScene6 }
+        { time: 3500, action: runScene2 },
+        { time: 7500, action: runScene3 },
+        { time: 11000, action: runScene4 },
+        { time: 15000, action: runScene5 },
+        { time: 18500, action: runScene6 }
     ];
 
     let timers = [];
@@ -229,13 +221,10 @@
         
         // Reset element states
         document.getElementById('terminal-text').innerHTML = '';
-        document.getElementById('vortex-grid').classList.remove('vortex-shrink');
-        document.getElementById('ai-text').classList.remove('reveal');
-        document.getElementById('aura-counter').innerText = '+0';
+        document.querySelectorAll('.grid-card').forEach(c => c.classList.remove('show'));
+        document.getElementById('aura-counter').innerText = '+0 AURA POINTS';
         document.getElementById('aura-text').classList.remove('pop');
-        document.getElementById('block1').classList.remove('slide-in');
-        document.getElementById('block2').classList.remove('slide-in');
-        document.getElementById('block3').classList.remove('slide-in');
+        document.querySelectorAll('.code-block').forEach(b => b.classList.remove('slide-in'));
         document.getElementById('cash-text').classList.remove('boom');
         document.getElementById('final-btn').classList.remove('pulse');
 
@@ -249,7 +238,7 @@
     // SCENE 1 RUNNER
     function runScene1() {
         switchScene('scene1');
-        const text = "THE WORLD IS RUNNING ON CODE...";
+        const text = "COMPILING FUTURE PROTOCOLS...";
         let i = 0;
         const elem = document.getElementById('terminal-text');
         
@@ -267,13 +256,11 @@
     // SCENE 2 RUNNER
     function runScene2() {
         switchScene('scene2');
-        let t1 = setTimeout(() => {
-            document.getElementById('vortex-grid').classList.add('vortex-shrink');
-        }, 800);
-        let t2 = setTimeout(() => {
-            document.getElementById('ai-text').classList.add('reveal');
-        }, 1600);
-        timers.push(t1, t2);
+        let t1 = setTimeout(() => document.getElementById('card1').classList.add('show'), 200);
+        let t2 = setTimeout(() => document.getElementById('card2').classList.add('show'), 600);
+        let t3 = setTimeout(() => document.getElementById('card3').classList.add('show'), 1000);
+        let t4 = setTimeout(() => document.getElementById('card4').classList.add('show'), 1400);
+        timers.push(t1, t2, t3, t4);
     }
 
     // SCENE 3 RUNNER
@@ -300,10 +287,11 @@
     // SCENE 4 RUNNER
     function runScene4() {
         switchScene('scene4');
-        let t1 = setTimeout(() => document.getElementById('block1').classList.add('slide-in'), 300);
-        let t2 = setTimeout(() => document.getElementById('block2').classList.add('slide-in'), 900);
-        let t3 = setTimeout(() => document.getElementById('block3').classList.add('slide-in'), 1500);
-        timers.push(t1, t2, t3);
+        let t1 = setTimeout(() => document.getElementById('block1').classList.add('slide-in'), 200);
+        let t2 = setTimeout(() => document.getElementById('block2').classList.add('slide-in'), 600);
+        let t3 = setTimeout(() => document.getElementById('block3').classList.add('slide-in'), 1000);
+        let t4 = setTimeout(() => document.getElementById('block4').classList.add('slide-in'), 1400);
+        timers.push(t1, t2, t3, t4);
     }
 
     // SCENE 5 RUNNER
